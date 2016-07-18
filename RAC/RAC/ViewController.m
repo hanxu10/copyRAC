@@ -15,13 +15,14 @@
 void f1(){
     printf("dddd\n");
 }
+#define ppp(y,x) NSLog(@"haha--%@",x)
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    NSString *s = ssss(12);
+    metamacro_foreach(ppp, ;, @"2",@"3");
     NSLog(@"");
 }
 
