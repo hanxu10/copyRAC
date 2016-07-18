@@ -7,18 +7,28 @@
 //
 
 #import "ViewController.h"
-
+#import "metamacros.h"
 @interface ViewController ()
 
 @end
+
+void f1(){
+    printf("dddd\n");
+}
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    NSString *s = ssss(12);
+    NSLog(@"");
 }
 
+- (NSInteger)sss {
+    NSLog(@"sadfasdf");
+    return 1;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
