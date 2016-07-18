@@ -14,6 +14,8 @@
 		043206661D36769000116EC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 043206651D36769000116EC3 /* Assets.xcassets */; };
 		043206691D36769000116EC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 043206671D36769000116EC3 /* LaunchScreen.storyboard */; };
 		0FA119481D36908D007176C8 /* HXStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA119471D36908D007176C8 /* HXStream.m */; };
+		0FB0116F1D3B3E86000F92C2 /* HXBlockTrampoline.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB0116E1D3B3E86000F92C2 /* HXBlockTrampoline.m */; };
+		0FB011721D3B3F2A000F92C2 /* HXTuple.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB011711D3B3F2A000F92C2 /* HXTuple.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,8 +29,13 @@
 		043206651D36769000116EC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		043206681D36769000116EC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0432066A1D36769000116EC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0F4DF0881D3BD36100A274C8 /* metamacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = metamacros.h; sourceTree = "<group>"; };
 		0FA119461D36908D007176C8 /* HXStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXStream.h; sourceTree = "<group>"; };
 		0FA119471D36908D007176C8 /* HXStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXStream.m; sourceTree = "<group>"; };
+		0FB0116D1D3B3E86000F92C2 /* HXBlockTrampoline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXBlockTrampoline.h; sourceTree = "<group>"; };
+		0FB0116E1D3B3E86000F92C2 /* HXBlockTrampoline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXBlockTrampoline.m; sourceTree = "<group>"; };
+		0FB011701D3B3F2A000F92C2 /* HXTuple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTuple.h; sourceTree = "<group>"; };
+		0FB011711D3B3F2A000F92C2 /* HXTuple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTuple.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +95,11 @@
 			children = (
 				0FA119461D36908D007176C8 /* HXStream.h */,
 				0FA119471D36908D007176C8 /* HXStream.m */,
+				0FB0116D1D3B3E86000F92C2 /* HXBlockTrampoline.h */,
+				0FB0116E1D3B3E86000F92C2 /* HXBlockTrampoline.m */,
+				0FB011701D3B3F2A000F92C2 /* HXTuple.h */,
+				0FB011711D3B3F2A000F92C2 /* HXTuple.m */,
+				0F4DF0881D3BD36100A274C8 /* metamacros.h */,
 			);
 			path = HX;
 			sourceTree = "<group>";
@@ -162,8 +174,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FB011721D3B3F2A000F92C2 /* HXTuple.m in Sources */,
 				043206611D36769000116EC3 /* ViewController.m in Sources */,
 				0FA119481D36908D007176C8 /* HXStream.m in Sources */,
+				0FB0116F1D3B3E86000F92C2 /* HXBlockTrampoline.m in Sources */,
 				0432065E1D36769000116EC3 /* AppDelegate.m in Sources */,
 				0432065B1D36769000116EC3 /* main.m in Sources */,
 			);
