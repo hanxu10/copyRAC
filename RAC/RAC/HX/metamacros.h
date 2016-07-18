@@ -86,7 +86,7 @@
 
 
 
-//#define ppp(y,x) NSLog(@"haha--%@",x)
+//#define ppp(y,x) NSLog(@"haha-%d-%@",y,x)
 //
 //@implementation ViewController
 //
@@ -97,11 +97,10 @@
 //    NSLog(@"");
 //}
 //打印结果：
-//2016-07-18 21:41:35.282 RAC[41291:12155618] haha--2
-//2016-07-18 21:41:35.283 RAC[41291:12155618] haha--3
-//这个宏MACRO
-
-
+//2016-07-18 23:08:51.434 StudyRAC[10912:604443] haha-0-2
+//2016-07-18 23:08:51.434 StudyRAC[10912:604443] haha-1-3
+//这个宏MACRO接受两个参数。SEP设置为;。然后传入可变参数。
+//与metamacro_foreach_cxt一样，除了不需要提供CONTEXT参数。只有index和当前参数被传入MARCO。
 //可以参考http://paul-samuels.com/blog/2014/03/21/how-does-it-work-meta-macros/
 #define metamacro_foreach(MACRO, SEP, ...) metamacro_foreach_cxt(metamacro_foreach_iter, SEP, MACRO, __VA_ARGS__)
 
@@ -119,7 +118,7 @@
 #define metamacro_concat_(A, B) A ## B
 
 
-//传入一个宏的名字，这个宏有两个参数，分别为INDEX和ARG
+//传入一个宏的名字MACRO，这个宏有两个参数，分别为INDEX和ARG
 #define metamacro_foreach_iter(INDEX, MACRO, ARG) MACRO(INDEX, ARG)
 
 
@@ -167,6 +166,96 @@
     metamacro_foreach_cxt1(MACRO, SEP, CONTEXT, _0) \
     SEP \
     MACRO(1, CONTEXT, _1)
+
+#define metamacro_foreach_cxt3(MACRO, SEP, CONTEXT, _0, _1, _2) \
+    metamacro_foreach_cxt2(MACRO, SEP, CONTEXT, _0, _1) \
+    SEP \
+    MACRO(2, CONTEXT, _2)
+
+#define metamacro_foreach_cxt4(MACRO, SEP, CONTEXT, _0, _1, _2, _3) \
+    metamacro_foreach_cxt3(MACRO, SEP, CONTEXT, _0, _1, _2) \
+    SEP \
+    MACRO(3, CONTEXT, _3)
+
+#define metamacro_foreach_cxt5(MACRO, SEP, CONTEXT, _0, _1, _2, _3, _4) \
+    metamacro_foreach_cxt4(MACRO, SEP, CONTEXT, _0, _1, _2, _3) \
+    SEP \
+    MACRO(4, CONTEXT, _4)
+
+#define metamacro_foreach_cxt6(MACRO, SEP, CONTEXT, _0, _1, _2, _3, _4, _5) \
+    metamacro_foreach_cxt5(MACRO, SEP, CONTEXT, _0, _1, _2, _3, _4) \
+    SEP \
+    MACRO(5, CONTEXT, _5)
+
+#define metamacro_foreach_cxt7(MACRO, SEP, CONTEXT, _0, _1, _2, _3, _4, _5, _6) \
+    metamacro_foreach_cxt6(MACRO, SEP, CONTEXT, _0, _1, _2, _3, _4, _5) \
+    SEP \
+    MACRO(6, CONTEXT, _6)
+
+#define metamacro_foreach_cxt8(MACRO, SEP, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7) \
+    metamacro_foreach_cxt7(MACRO, SEP, CONTEXT, _0, _1, _2, _3, _4, _5, _6) \
+    SEP \
+    MACRO(7, CONTEXT, _7)
+
+#define metamacro_foreach_cxt9(MACRO, SEP, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8) \
+    metamacro_foreach_cxt8(MACRO, SEP, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7) \
+    SEP \
+    MACRO(8, CONTEXT, _8)
+
+#define metamacro_foreach_cxt10(MACRO, SEP, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9) \
+    metamacro_foreach_cxt9(MACRO, SEP, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8) \
+    SEP \
+    MACRO(9, CONTEXT, _9)
+
+#define metamacro_foreach_cxt11(MACRO, SEP, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10) \
+    metamacro_foreach_cxt10(MACRO, SEP, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9) \
+    SEP \
+    MACRO(10, CONTEXT, _10)
+
+#define metamacro_foreach_cxt12(MACRO, SEP, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11) \
+    metamacro_foreach_cxt11(MACRO, SEP, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10) \
+    SEP \
+    MACRO(11, CONTEXT, _11)
+
+#define metamacro_foreach_cxt13(MACRO, SEP, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12) \
+    metamacro_foreach_cxt12(MACRO, SEP, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11) \
+    SEP \
+    MACRO(12, CONTEXT, _12)
+
+#define metamacro_foreach_cxt14(MACRO, SEP, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13) \
+    metamacro_foreach_cxt13(MACRO, SEP, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12) \
+    SEP \
+    MACRO(13, CONTEXT, _13)
+
+#define metamacro_foreach_cxt15(MACRO, SEP, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14) \
+    metamacro_foreach_cxt14(MACRO, SEP, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13) \
+    SEP \
+    MACRO(14, CONTEXT, _14)
+
+#define metamacro_foreach_cxt16(MACRO, SEP, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15) \
+    metamacro_foreach_cxt15(MACRO, SEP, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14) \
+    SEP \
+    MACRO(15, CONTEXT, _15)
+
+#define metamacro_foreach_cxt17(MACRO, SEP, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16) \
+    metamacro_foreach_cxt16(MACRO, SEP, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15) \
+    SEP \
+    MACRO(16, CONTEXT, _16)
+
+#define metamacro_foreach_cxt18(MACRO, SEP, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17) \
+    metamacro_foreach_cxt17(MACRO, SEP, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16) \
+    SEP \
+    MACRO(17, CONTEXT, _17)
+
+#define metamacro_foreach_cxt19(MACRO, SEP, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18) \
+    metamacro_foreach_cxt18(MACRO, SEP, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17) \
+    SEP \
+    MACRO(18, CONTEXT, _18)
+
+#define metamacro_foreach_cxt20(MACRO, SEP, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19) \
+    metamacro_foreach_cxt19(MACRO, SEP, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18) \
+    SEP \
+    MACRO(19, CONTEXT, _19)
 
 /*---------------------------------------------------------------------------------------------------------*/
 
