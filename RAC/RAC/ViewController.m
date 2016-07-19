@@ -12,17 +12,15 @@
 
 @end
 
-void f1(){
-    printf("dddd\n");
-}
-#define ppp(y,x) NSLog(@"haha--%@",x)
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    metamacro_foreach(ppp, ;, @"2",@"3");
+    
+    metamacro_if_eq(1, 1) (NSLog(@"相当")) (NSLog(@"不相等"));
+    
     NSLog(@"");
 }
 
