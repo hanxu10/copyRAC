@@ -30,6 +30,7 @@
 		043206681D36769000116EC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0432066A1D36769000116EC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F4DF0881D3BD36100A274C8 /* metamacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = metamacros.h; sourceTree = "<group>"; };
+		0F4DF0891D3E729C00A274C8 /* EXTScope.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXTScope.h; sourceTree = "<group>"; };
 		0FA119461D36908D007176C8 /* HXStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXStream.h; sourceTree = "<group>"; };
 		0FA119471D36908D007176C8 /* HXStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXStream.m; sourceTree = "<group>"; };
 		0FB0116D1D3B3E86000F92C2 /* HXBlockTrampoline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXBlockTrampoline.h; sourceTree = "<group>"; };
@@ -100,6 +101,7 @@
 				0FB011701D3B3F2A000F92C2 /* HXTuple.h */,
 				0FB011711D3B3F2A000F92C2 /* HXTuple.m */,
 				0F4DF0881D3BD36100A274C8 /* metamacros.h */,
+				0F4DF0891D3E729C00A274C8 /* EXTScope.h */,
 			);
 			path = HX;
 			sourceTree = "<group>";
