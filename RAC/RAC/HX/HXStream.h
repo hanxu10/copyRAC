@@ -72,11 +72,64 @@ typedef HXStream * (^HXStreamBindBlock)(id value, BOOL *stop);//这个block接�
 
 
 //NS_FORMAT_FUNCTION(第一个参数是format的位置，第二个参数是可变参数开始的位置)
-//设置receiver的name，除了给RAC_DEBUG_SIGNAL_NAMES环境变量设置值，不会做别的事情。
+//设置receiver的name，除非给RAC_DEBUG_SIGNAL_NAMES环境变量设置值，否则不会做别的事情。
 //
 //返回receiver，以便进行链式操作。
 - (instancetype)setNameWithFormat:(NSString *)format, ... NS_FORMAT_FUNCTION(1, 2);
+@end
 
+
+
+
+
+
+
+@interface HXStream (Operations)
+
+//把‘block’映射到receiver上，并且平坦化结果。
+//
+//block - 这个block接受receiver中的值，返回一个新的stream实例。如果返回nil，等同于返回empty stream。
+//
+//返回值是一个新的stream,对这个新的返回值stream进行订阅，就相当于对block中的返回值stream进行订阅。
+- (instancetype)flattenMap:(HXStream *(^)(id value))block;
+
+
+//使stream of streams平坦化
+//
+//返回一个stream，这个stream由从receiver中获取的combined streams组成。
+//本来selfstream发送的是一个个stream，直接订阅selfstream拿到的值是也是stream类型的；如果对selfstream进行flatten处理，再订阅，则取到的是一个个stream发出的值。
+- (instancetype)flatten;
+
+
+//用block去映射receiver中的值。
+//
+//返回一个新的stream，这个stream中的值是block返回的值。
+- (instancetype)map:(id(^)(id value))block;
+
+
+//用‘object’替换receiver中的每一个值
+//
+//返回一个新的stream
+- (instancetype)mapReplace:(id)object;
+
+
+//过滤掉receiver中不符合条件的值。
+//
+//返回一个新的stream，这个stream的值都是通过测试的。
+- (instancetype)filter:(BOOL (^)(id value))block;
+
+
+//过滤掉receiver中等于给定value的值
+//
+//value - value可以是nil，这样的话就过滤掉nil
+//
+- (instancetype)ignore:(id)value;
+
+
+//
+//reduceBlock拿到元组中的几个参数，进行处理，返回一个value
+//
+- (instancetype)reduceEach:(id(^)())reduceBlock;
 
 //返回一个stream，这个stream由‘value’和这个receiver的值组成。
 - (instancetype)startWith:(id)value;
@@ -178,57 +231,4 @@ typedef HXStream * (^HXStreamBindBlock)(id value, BOOL *stop);//这个block接�
 
 @end
 
-
-
-
-
-
-@interface HXStream (Operations)
-
-//把‘block’映射到receiver上，并且平坦化结果。
-//
-//block - 这个block接受receiver中的值，返回一个新的stream实例。如果返回nil，等同于返回empty stream。
-//
-//返回值是一个新的stream,对这个新的返回值stream进行订阅，就相当于对block中的返回值stream进行订阅。
-- (instancetype)flattenMap:(HXStream *(^)(id value))block;
-
-
-//使stream of streams平坦化
-//
-//返回一个stream，这个stream由从receiver中获取的combined streams组成。
-//本来selfstream发送的是一个个stream，直接订阅selfstream拿到的值是也是stream类型的；如果对selfstream进行flatten处理，再订阅，则取到的是一个个stream发出的值。
-- (instancetype)flatten;
-
-
-//用block去映射receiver中的值。
-//
-//返回一个新的stream，这个stream中的值是block返回的值。
-- (instancetype)map:(id(^)(id value))block;
-
-
-//用‘object’替换receiver中的每一个值
-//
-//返回一个新的stream
-- (instancetype)mapReplace:(id)object;
-
-
-//过滤掉receiver中不符合条件的值。
-//
-//返回一个新的stream，这个stream的值都是通过测试的。
-- (instancetype)filter:(BOOL (^)(id value))block;
-
-
-//过滤掉receiver中等于给定value的值
-//
-//value - value可以是nil，这样的话就过滤掉nil
-//
-- (instancetype)ignore:(id)value;
-
-
-//
-//
-//
-- (instancetype)reduceEach:(id(^)())reduceBlock;
-
-@end
 

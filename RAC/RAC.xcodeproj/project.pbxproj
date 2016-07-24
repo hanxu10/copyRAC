@@ -13,6 +13,9 @@
 		043206641D36769000116EC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 043206621D36769000116EC3 /* Main.storyboard */; };
 		043206661D36769000116EC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 043206651D36769000116EC3 /* Assets.xcassets */; };
 		043206691D36769000116EC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 043206671D36769000116EC3 /* LaunchScreen.storyboard */; };
+		0F4DD3231D432D3700674309 /* NSObject+HXDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F4DD3221D432D3700674309 /* NSObject+HXDescription.m */; };
+		0F96189F1D44F1F90021AA63 /* HXSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F96189E1D44F1F90021AA63 /* HXSequence.m */; };
+		0F9618A21D44F3600021AA63 /* HXTupleSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9618A11D44F3600021AA63 /* HXTupleSequence.m */; };
 		0FA119481D36908D007176C8 /* HXStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA119471D36908D007176C8 /* HXStream.m */; };
 		0FB0116F1D3B3E86000F92C2 /* HXBlockTrampoline.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB0116E1D3B3E86000F92C2 /* HXBlockTrampoline.m */; };
 		0FB011721D3B3F2A000F92C2 /* HXTuple.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB011711D3B3F2A000F92C2 /* HXTuple.m */; };
@@ -29,8 +32,15 @@
 		043206651D36769000116EC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		043206681D36769000116EC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0432066A1D36769000116EC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0F4DD3211D432D3700674309 /* NSObject+HXDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+HXDescription.h"; sourceTree = "<group>"; };
+		0F4DD3221D432D3700674309 /* NSObject+HXDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HXDescription.m"; sourceTree = "<group>"; };
+		0F4DD3241D44B39200674309 /* EXTKeyPathCoding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXTKeyPathCoding.h; sourceTree = "<group>"; };
 		0F4DF0881D3BD36100A274C8 /* metamacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = metamacros.h; sourceTree = "<group>"; };
 		0F4DF0891D3E729C00A274C8 /* EXTScope.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXTScope.h; sourceTree = "<group>"; };
+		0F96189D1D44F1F90021AA63 /* HXSequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXSequence.h; sourceTree = "<group>"; };
+		0F96189E1D44F1F90021AA63 /* HXSequence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXSequence.m; sourceTree = "<group>"; };
+		0F9618A01D44F3600021AA63 /* HXTupleSequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTupleSequence.h; sourceTree = "<group>"; };
+		0F9618A11D44F3600021AA63 /* HXTupleSequence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTupleSequence.m; sourceTree = "<group>"; };
 		0FA119461D36908D007176C8 /* HXStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXStream.h; sourceTree = "<group>"; };
 		0FA119471D36908D007176C8 /* HXStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXStream.m; sourceTree = "<group>"; };
 		0FB0116D1D3B3E86000F92C2 /* HXBlockTrampoline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXBlockTrampoline.h; sourceTree = "<group>"; };
@@ -100,8 +110,15 @@
 				0FB0116E1D3B3E86000F92C2 /* HXBlockTrampoline.m */,
 				0FB011701D3B3F2A000F92C2 /* HXTuple.h */,
 				0FB011711D3B3F2A000F92C2 /* HXTuple.m */,
+				0F9618A01D44F3600021AA63 /* HXTupleSequence.h */,
+				0F9618A11D44F3600021AA63 /* HXTupleSequence.m */,
+				0F4DD3211D432D3700674309 /* NSObject+HXDescription.h */,
+				0F4DD3221D432D3700674309 /* NSObject+HXDescription.m */,
 				0F4DF0881D3BD36100A274C8 /* metamacros.h */,
 				0F4DF0891D3E729C00A274C8 /* EXTScope.h */,
+				0F4DD3241D44B39200674309 /* EXTKeyPathCoding.h */,
+				0F96189D1D44F1F90021AA63 /* HXSequence.h */,
+				0F96189E1D44F1F90021AA63 /* HXSequence.m */,
 			);
 			path = HX;
 			sourceTree = "<group>";
@@ -176,11 +193,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F96189F1D44F1F90021AA63 /* HXSequence.m in Sources */,
 				0FB011721D3B3F2A000F92C2 /* HXTuple.m in Sources */,
 				043206611D36769000116EC3 /* ViewController.m in Sources */,
 				0FA119481D36908D007176C8 /* HXStream.m in Sources */,
 				0FB0116F1D3B3E86000F92C2 /* HXBlockTrampoline.m in Sources */,
 				0432065E1D36769000116EC3 /* AppDelegate.m in Sources */,
+				0F9618A21D44F3600021AA63 /* HXTupleSequence.m in Sources */,
+				0F4DD3231D432D3700674309 /* NSObject+HXDescription.m in Sources */,
 				0432065B1D36769000116EC3 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
