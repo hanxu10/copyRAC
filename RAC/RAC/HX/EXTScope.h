@@ -22,6 +22,7 @@
 //
 //
 //
+
 #define weakify(...) rac_keywordify metamacro_foreach_cxt(rac_weakify_,,__weak, __VA_ARGS__)
 
 #define strongify(...) \
@@ -49,17 +50,22 @@ static inline void rac_executeCleanupBlock (__strong rac_cleanupBlock_t *block) 
 #define rac_strongify_(INDEX, VAR) __strong __typeof__(VAR) VAR = metamacro_concat(VAR, _weak_);
 
 
+
+
+
+
+
+
+//使用@try/@catch/@finally 能够不让编译器报return-type警告。
+//使用@autorelease {}不会被编译器优化，这导致了创建了多余的autorelease pool。
+//
+//既然两个方法都不完美，并且没有别的选择。妥协的方法是，在DEBUG模式下，使用@autorelease
+
 #if DEBUG
 #define rac_keywordify autoreleasepool {}
 #else
 #define rac_keywordify try {} @catch (...) {}
 #endif
-
-
-
-
-
-
 
 
 
